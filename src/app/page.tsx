@@ -922,7 +922,7 @@ function ItemsPage() {
             >
               <div className="bg-muted/30 flex items-center justify-center p-4 h-36 relative">
                 {item.discount && (
-                  <Badge className="absolute top-2 left-2 bg-red-500 text-white text-[10px]">{item.discount}% OFF</Badge>
+                  <Badge className="absolute top-2 right-2 bg-red-500 text-white text-[10px]">{item.discount}% OFF</Badge>
                 )}
                 <img
                   src="/item-placeholder.png"
