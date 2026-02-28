@@ -1210,26 +1210,26 @@ function SettingsPage() {
         <CardContent className="space-y-4">
           <div className="flex items-center gap-4">
             <Avatar className="h-16 w-16">
-              <AvatarFallback className="bg-primary text-primary-foreground text-xl font-semibold">JN</AvatarFallback>
+              <AvatarFallback className="bg-primary text-primary-foreground text-xl font-semibold">SS</AvatarFallback>
             </Avatar>
             <div>
-              <p className="font-semibold">Jan Novak</p>
-              <p className="text-sm text-muted-foreground">jan.novak@swagat.cz</p>
+              <p className="font-semibold">Saini Sanjeev</p>
+              <p className="text-sm text-muted-foreground">saini.sanjeev@swagat.com</p>
             </div>
           </div>
           <Separator />
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="firstName">First Name</Label>
-              <Input id="firstName" defaultValue="Jan" />
+              <Input id="firstName" defaultValue="Saini" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="lastName">Last Name</Label>
-              <Input id="lastName" defaultValue="Novak" />
+              <Input id="lastName" defaultValue="Sanjeev" />
             </div>
             <div className="col-span-2 space-y-2">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" defaultValue="jan.novak@swagat.cz" />
+              <Input id="email" type="email" defaultValue="saini.sanjeev@swagat.com" />
             </div>
           </div>
         </CardContent>
@@ -1387,10 +1387,10 @@ export default function SwagatAdmin() {
             <DropdownMenuTrigger asChild>
               <button className="flex items-center gap-3 w-full hover:bg-sidebar-accent rounded-lg p-2 -m-2 transition-colors">
                 <Avatar className="h-9 w-9">
-                  <AvatarFallback className="bg-sidebar-accent text-sidebar-accent-foreground text-sm font-semibold">JN</AvatarFallback>
+                  <AvatarFallback className="bg-sidebar-accent text-sidebar-accent-foreground text-sm font-semibold">SS</AvatarFallback>
                 </Avatar>
                 <div className="flex-1 min-w-0 text-left">
-                  <p className="text-sm font-semibold truncate">Jan Novak</p>
+                  <p className="text-sm font-semibold truncate">Saini Sanjeev</p>
                   <p className="text-xs text-sidebar-foreground/60 truncate">Admin</p>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-sidebar-foreground/60">
