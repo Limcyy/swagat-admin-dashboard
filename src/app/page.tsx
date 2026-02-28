@@ -937,6 +937,10 @@ function InvoicingPage() {
       {/* Invoice Preview Dialog */}
       <Dialog open={!!selectedInvoice} onOpenChange={() => setSelectedInvoice(null)}>
         <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader className="sr-only">
+            <DialogTitle>Invoice Preview</DialogTitle>
+            <DialogDescription>View invoice details</DialogDescription>
+          </DialogHeader>
           {selectedInvoice && (
             <div className="space-y-6">
               {/* Invoice Header */}
