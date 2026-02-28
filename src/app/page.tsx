@@ -867,15 +867,16 @@ type Item = {
   stock: number;
   unit: string;
   image?: string;
+  discount?: number;
 };
 
 const allItems: Item[] = [
-  { id: 1, name: "Basmati Rice 5kg", category: "Rice & Grains", price: "12.80 EUR", stock: 145, unit: "bag" },
+  { id: 1, name: "Basmati Rice 5kg", category: "Rice & Grains", price: "12.80 EUR", stock: 145, unit: "bag", discount: 10 },
   { id: 2, name: "Garam Masala 500g", category: "Spices", price: "7.20 EUR", stock: 89, unit: "pack" },
-  { id: 3, name: "Ghee 1L", category: "Dairy", price: "11.60 EUR", stock: 62, unit: "jar" },
+  { id: 3, name: "Ghee 1L", category: "Dairy", price: "11.60 EUR", stock: 62, unit: "jar", discount: 15 },
   { id: 4, name: "Chickpeas 2kg", category: "Legumes", price: "3.80 EUR", stock: 203, unit: "bag" },
   { id: 5, name: "Turmeric Powder 1kg", category: "Spices", price: "8.40 EUR", stock: 78, unit: "pack" },
-  { id: 6, name: "Coconut Milk 400ml", category: "Canned Goods", price: "2.60 EUR", stock: 312, unit: "can" },
+  { id: 6, name: "Coconut Milk 400ml", category: "Canned Goods", price: "2.60 EUR", stock: 312, unit: "can", discount: 5 },
   { id: 7, name: "Paneer 1kg", category: "Dairy", price: "12.80 EUR", stock: 45, unit: "block" },
   { id: 8, name: "Naan Bread Mix 2kg", category: "Flour & Baking", price: "7.20 EUR", stock: 98, unit: "bag" },
 ];
@@ -919,7 +920,10 @@ function ItemsPage() {
               className="cursor-pointer hover:shadow-md transition-shadow overflow-hidden"
               onClick={() => setSelectedItem(item)}
             >
-              <div className="bg-muted/30 flex items-center justify-center p-4 h-36">
+              <div className="bg-muted/30 flex items-center justify-center p-4 h-36 relative">
+                {item.discount && (
+                  <Badge className="absolute top-2 left-2 bg-red-500 text-white text-[10px]">{item.discount}% OFF</Badge>
+                )}
                 <img
                   src="/item-placeholder.png"
                   alt={item.name}
@@ -948,12 +952,19 @@ function ItemsPage() {
           {selectedItem && (
             <>
               <DialogHeader>
-                <DialogTitle>{selectedItem.name}</DialogTitle>
-                <DialogDescription>{selectedItem.category}</DialogDescription>
+                <div className="flex items-start justify-between">
+                  <div>
+                    <DialogTitle>{selectedItem.name}</DialogTitle>
+                    <DialogDescription>{selectedItem.category}</DialogDescription>
+                  </div>
+                  {selectedItem.discount && (
+                    <Badge className="bg-red-500 text-white">{selectedItem.discount}% OFF</Badge>
+                  )}
+                </div>
               </DialogHeader>
 
               <div className="space-y-4 pt-2">
-                <div className="flex items-center justify-center p-4 bg-muted/30 rounded-lg">
+                <div className="flex items-center justify-center p-4 bg-muted/30 rounded-lg relative">
                   <img
                     src="/item-placeholder.png"
                     alt={selectedItem.name}
@@ -977,6 +988,36 @@ function ItemsPage() {
                   <div className="space-y-1">
                     <p className="text-muted-foreground">Item ID</p>
                     <p className="font-medium">ITM-{String(selectedItem.id).padStart(4, '0')}</p>
+                  </div>
+                </div>
+
+                <Separator />
+
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm font-medium">Discount</p>
+                      <p className="text-xs text-muted-foreground">
+                        {selectedItem.discount ? `${selectedItem.discount}% discount active` : "No discount applied"}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Select defaultValue={selectedItem.discount?.toString() || "0"}>
+                        <SelectTrigger className="w-24 h-8">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="0">None</SelectItem>
+                          <SelectItem value="5">5%</SelectItem>
+                          <SelectItem value="10">10%</SelectItem>
+                          <SelectItem value="15">15%</SelectItem>
+                          <SelectItem value="20">20%</SelectItem>
+                          <SelectItem value="25">25%</SelectItem>
+                          <SelectItem value="30">30%</SelectItem>
+                          <SelectItem value="50">50%</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
                   </div>
                 </div>
 
