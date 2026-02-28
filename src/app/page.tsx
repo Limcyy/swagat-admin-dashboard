@@ -916,21 +916,25 @@ function ItemsPage() {
           return (
             <Card
               key={item.id}
-              className="cursor-pointer hover:shadow-md transition-shadow"
+              className="cursor-pointer hover:shadow-md transition-shadow overflow-hidden"
               onClick={() => setSelectedItem(item)}
             >
-              <CardContent className="p-4">
-                <div className="flex items-start justify-between mb-3">
-                  <div className={`h-12 w-12 rounded-lg bg-${stockStatus}-100 flex items-center justify-center`}>
-                    <IconPackage />
-                  </div>
-                  <Badge variant="secondary" className="text-xs">{item.category}</Badge>
+              <div className="aspect-square bg-muted/30 flex items-center justify-center p-4">
+                <img
+                  src="/item-placeholder.png"
+                  alt={item.name}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <CardContent className="p-4 pt-3">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="font-semibold text-sm leading-tight">{item.name}</h3>
+                  <Badge variant="secondary" className="text-[10px] ml-2 shrink-0">{item.category}</Badge>
                 </div>
-                <h3 className="font-semibold text-sm mb-1">{item.name}</h3>
                 <p className="text-lg font-bold text-primary mb-2">{item.price}</p>
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-muted-foreground">Stock</span>
-                  <span className={`font-medium text-${stockStatus}-600`}>{item.stock} {item.unit}s</span>
+                  <span className={`font-medium ${item.stock > 100 ? "text-emerald-600" : item.stock > 50 ? "text-amber-600" : "text-red-600"}`}>{item.stock} {item.unit}s</span>
                 </div>
               </CardContent>
             </Card>
@@ -949,12 +953,12 @@ function ItemsPage() {
               </DialogHeader>
 
               <div className="space-y-4 pt-2">
-                <div className="flex items-center justify-center py-6 bg-muted/50 rounded-lg">
-                  <div className="h-20 w-20 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-10 w-10">
-                      <path d="M16.5 9.4 7.55 4.24" /><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /><polyline points="3.29 7 12 12 20.71 7" /><line x1="12" y1="22" x2="12" y2="12" />
-                    </svg>
-                  </div>
+                <div className="flex items-center justify-center p-4 bg-muted/30 rounded-lg">
+                  <img
+                    src="/item-placeholder.png"
+                    alt={selectedItem.name}
+                    className="h-40 w-40 object-contain"
+                  />
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 text-sm">
