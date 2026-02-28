@@ -1344,18 +1344,16 @@ export default function SwagatAdmin() {
   return (
     <>
       <Sidebar className="border-r-0">
-        <SidebarHeader className="p-5 pb-6">
+        <SidebarHeader className="p-4">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center shadow-sm">
-              <img
-                src="/swagat-logo.webp"
-                alt="Swagat Logo"
-                className="h-7 w-7 object-contain"
-              />
-            </div>
+            <img
+              src="/swagat-logo.webp"
+              alt="Swagat Logo"
+              className="h-10 w-10 object-contain"
+            />
             <div>
-              <p className="font-bold text-base tracking-tight">Swagat</p>
-              <p className="text-[11px] text-sidebar-foreground/50 font-medium">Admin Panel</p>
+              <p className="font-bold text-base">Swagat</p>
+              <p className="text-xs text-sidebar-foreground/60">Demo Admin Panel</p>
             </div>
           </div>
         </SidebarHeader>
@@ -1366,22 +1364,15 @@ export default function SwagatAdmin() {
               <SidebarMenu className="space-y-1">
                 {navItems.map((item) => {
                   const Icon = navIconMap[item.icon];
-                  const isActive = activePage === item.page;
                   return (
                     <SidebarMenuItem key={item.title}>
                       <SidebarMenuButton
-                        isActive={isActive}
+                        isActive={activePage === item.page}
                         onClick={() => setActivePage(item.page)}
-                        className={`h-10 px-3 rounded-lg font-medium transition-all duration-200 ${
-                          isActive
-                            ? "bg-primary text-primary-foreground shadow-sm"
-                            : "hover:bg-sidebar-accent/80"
-                        }`}
+                        className="h-11 px-3 rounded-xl font-medium"
                       >
-                        <div className={`${isActive ? "text-primary-foreground" : "text-muted-foreground"}`}>
-                          <Icon />
-                        </div>
-                        <span className={isActive ? "" : "text-sidebar-foreground/80"}>{item.title}</span>
+                        <Icon />
+                        <span>{item.title}</span>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                   );
@@ -1391,18 +1382,18 @@ export default function SwagatAdmin() {
           </SidebarGroup>
         </SidebarContent>
 
-        <SidebarFooter className="p-4 border-t border-sidebar-border/50">
+        <SidebarFooter className="p-4 border-t border-sidebar-border">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="flex items-center gap-3 w-full hover:bg-sidebar-accent/70 rounded-lg p-2 -m-2 transition-all duration-200">
-                <Avatar className="h-9 w-9 ring-2 ring-sidebar-border/50">
-                  <AvatarFallback className="bg-gradient-to-br from-violet-500 to-purple-600 text-white text-sm font-semibold">JN</AvatarFallback>
+              <button className="flex items-center gap-3 w-full hover:bg-sidebar-accent rounded-lg p-2 -m-2 transition-colors">
+                <Avatar className="h-9 w-9">
+                  <AvatarFallback className="bg-sidebar-accent text-sidebar-accent-foreground text-sm font-semibold">JN</AvatarFallback>
                 </Avatar>
                 <div className="flex-1 min-w-0 text-left">
                   <p className="text-sm font-semibold truncate">Jan Novak</p>
-                  <p className="text-[11px] text-sidebar-foreground/50 truncate font-medium">Admin</p>
+                  <p className="text-xs text-sidebar-foreground/60 truncate">Admin</p>
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-sidebar-foreground/40">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-sidebar-foreground/60">
                   <path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/>
                 </svg>
               </button>
