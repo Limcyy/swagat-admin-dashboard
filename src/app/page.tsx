@@ -93,18 +93,18 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 const recentOrders = [
-  { id: "ORD-4832", business: "Bombay Express", items: 12, total: "8,450 CZK", status: "new", date: "Today, 14:32" },
-  { id: "ORD-4831", business: "Curry House Prague", items: 8, total: "5,230 CZK", status: "confirmed", date: "Today, 11:15" },
-  { id: "ORD-4830", business: "Tandoori Nights", items: 15, total: "12,100 CZK", status: "confirmed", date: "Today, 09:45" },
-  { id: "ORD-4829", business: "Namaste Restaurant", items: 6, total: "3,890 CZK", status: "completed", date: "Yesterday" },
-  { id: "ORD-4828", business: "Spice Garden", items: 22, total: "18,500 CZK", status: "completed", date: "Yesterday" },
+  { id: "ORD-4832", business: "Bombay Express", items: 12, total: "8,450 EUR", status: "new", date: "Today, 14:32" },
+  { id: "ORD-4831", business: "Curry House Prague", items: 8, total: "5,230 EUR", status: "confirmed", date: "Today, 11:15" },
+  { id: "ORD-4830", business: "Tandoori Nights", items: 15, total: "12,100 EUR", status: "confirmed", date: "Today, 09:45" },
+  { id: "ORD-4829", business: "Namaste Restaurant", items: 6, total: "3,890 EUR", status: "completed", date: "Yesterday" },
+  { id: "ORD-4828", business: "Spice Garden", items: 22, total: "18,500 EUR", status: "completed", date: "Yesterday" },
 ];
 
 const topBusinesses = [
-  { name: "Bombay Express", orders: 24, revenue: "156,000 CZK", avatar: "BE" },
-  { name: "Curry House Prague", orders: 18, revenue: "98,500 CZK", avatar: "CH" },
-  { name: "Tandoori Nights", orders: 15, revenue: "87,200 CZK", avatar: "TN" },
-  { name: "Namaste Restaurant", orders: 12, revenue: "65,400 CZK", avatar: "NR" },
+  { name: "Bombay Express", orders: 24, revenue: "156,000 EUR", avatar: "BE" },
+  { name: "Curry House Prague", orders: 18, revenue: "98,500 EUR", avatar: "CH" },
+  { name: "Tandoori Nights", orders: 15, revenue: "87,200 EUR", avatar: "TN" },
+  { name: "Namaste Restaurant", orders: 12, revenue: "65,400 EUR", avatar: "NR" },
 ];
 
 const activityFeed = [
@@ -263,12 +263,12 @@ type Business = {
 };
 
 const allBusinesses: Business[] = [
-  { id: 1, name: "Bombay Express", contact: "Raj Patel", email: "raj@bombayexpress.cz", phone: "+420 777 123 456", address: "Vodickova 32, Prague 1", ico: "12345678", status: "active", lastOrder: "Today", avgOrder: "6,500 CZK", totalOrders: 45, totalRevenue: "292,500 CZK", notes: "Preferred delivery: Morning" },
-  { id: 2, name: "Curry House Prague", contact: "Amit Singh", email: "amit@curryhouse.cz", phone: "+420 777 234 567", address: "Vinohradska 89, Prague 2", ico: "23456789", status: "active", lastOrder: "Today", avgOrder: "5,470 CZK", totalOrders: 38, totalRevenue: "207,860 CZK" },
-  { id: 3, name: "Tandoori Nights", contact: "Priya Sharma", email: "priya@tandoorinights.cz", phone: "+420 777 345 678", address: "Namesti Miru 12, Prague 2", ico: "34567890", status: "active", lastOrder: "Yesterday", avgOrder: "8,070 CZK", totalOrders: 52, totalRevenue: "419,640 CZK" },
-  { id: 4, name: "Namaste Restaurant", contact: "Vikram Kumar", email: "vikram@namaste.cz", phone: "+420 777 456 789", address: "Karlova 8, Prague 1", ico: "45678901", status: "active", lastOrder: "2 days ago", avgOrder: "5,450 CZK", totalOrders: 28, totalRevenue: "152,600 CZK" },
-  { id: 5, name: "Spice Garden", contact: "Maya Devi", email: "maya@spicegarden.cz", phone: "+420 777 567 890", address: "Dlouha 33, Prague 1", ico: "56789012", status: "active", lastOrder: "3 days ago", avgOrder: "8,410 CZK", totalOrders: 61, totalRevenue: "513,010 CZK", notes: "Large orders, needs advance notice" },
-  { id: 6, name: "Masala Kitchen", contact: "Arjun Reddy", email: "arjun@masalakitchen.cz", phone: "+420 777 678 901", address: "Revolucni 25, Prague 1", ico: "67890123", status: "paused", lastOrder: "2 weeks ago", avgOrder: "4,200 CZK", totalOrders: 15, totalRevenue: "63,000 CZK", notes: "Temporarily closed for renovation" },
+  { id: 1, name: "Bombay Express", contact: "Raj Patel", email: "raj@bombayexpress.cz", phone: "+420 777 123 456", address: "Vodickova 32, Prague 1", ico: "12345678", status: "active", lastOrder: "Today", avgOrder: "6,500 EUR", totalOrders: 45, totalRevenue: "292,500 EUR", notes: "Preferred delivery: Morning" },
+  { id: 2, name: "Curry House Prague", contact: "Amit Singh", email: "amit@curryhouse.cz", phone: "+420 777 234 567", address: "Vinohradska 89, Prague 2", ico: "23456789", status: "active", lastOrder: "Today", avgOrder: "5,470 EUR", totalOrders: 38, totalRevenue: "207,860 EUR" },
+  { id: 3, name: "Tandoori Nights", contact: "Priya Sharma", email: "priya@tandoorinights.cz", phone: "+420 777 345 678", address: "Namesti Miru 12, Prague 2", ico: "34567890", status: "active", lastOrder: "Yesterday", avgOrder: "8,070 EUR", totalOrders: 52, totalRevenue: "419,640 EUR" },
+  { id: 4, name: "Namaste Restaurant", contact: "Vikram Kumar", email: "vikram@namaste.cz", phone: "+420 777 456 789", address: "Karlova 8, Prague 1", ico: "45678901", status: "active", lastOrder: "2 days ago", avgOrder: "5,450 EUR", totalOrders: 28, totalRevenue: "152,600 EUR" },
+  { id: 5, name: "Spice Garden", contact: "Maya Devi", email: "maya@spicegarden.cz", phone: "+420 777 567 890", address: "Dlouha 33, Prague 1", ico: "56789012", status: "active", lastOrder: "3 days ago", avgOrder: "8,410 EUR", totalOrders: 61, totalRevenue: "513,010 EUR", notes: "Large orders, needs advance notice" },
+  { id: 6, name: "Masala Kitchen", contact: "Arjun Reddy", email: "arjun@masalakitchen.cz", phone: "+420 777 678 901", address: "Revolucni 25, Prague 1", ico: "67890123", status: "paused", lastOrder: "2 weeks ago", avgOrder: "4,200 EUR", totalOrders: 15, totalRevenue: "63,000 EUR", notes: "Temporarily closed for renovation" },
 ];
 
 // Invoice data
@@ -288,11 +288,11 @@ type Invoice = {
 };
 
 const allInvoices: Invoice[] = [
-  { id: "INV-2024-089", business: "Tandoori Nights", ico: "34567890", address: "Namesti Miru 12, Prague 2", amount: "12,100 CZK", date: "Jun 15, 2024", due: "Jun 29, 2024", status: "issued", orderId: "ORD-4830", subtotal: "10,000 CZK", vat: "2,100 CZK", items: [{ description: "Tandoori Paste 500g", qty: 8, unitPrice: "145 CZK", total: "1,160 CZK" }, { description: "Naan Bread Mix 2kg", qty: 7, unitPrice: "180 CZK", total: "1,260 CZK" }, { description: "Basmati Rice 5kg", qty: 12, unitPrice: "320 CZK", total: "3,840 CZK" }, { description: "Garam Masala 500g", qty: 10, unitPrice: "180 CZK", total: "1,800 CZK" }] },
-  { id: "INV-2024-088", business: "Curry House Prague", ico: "23456789", address: "Vinohradska 89, Prague 2", amount: "5,230 CZK", date: "Jun 14, 2024", due: "Jun 28, 2024", status: "issued", orderId: "ORD-4831", subtotal: "4,322 CZK", vat: "908 CZK", items: [{ description: "Chickpeas 2kg", qty: 5, unitPrice: "95 CZK", total: "475 CZK" }, { description: "Turmeric Powder 1kg", qty: 3, unitPrice: "210 CZK", total: "630 CZK" }, { description: "Coconut Milk 400ml", qty: 20, unitPrice: "65 CZK", total: "1,300 CZK" }] },
-  { id: "INV-2024-087", business: "Bombay Express", ico: "12345678", address: "Vodickova 32, Prague 1", amount: "18,500 CZK", date: "Jun 12, 2024", due: "Jun 26, 2024", status: "paid", orderId: "ORD-4828", subtotal: "15,289 CZK", vat: "3,211 CZK", items: [{ description: "Mixed Spices Set", qty: 15, unitPrice: "450 CZK", total: "6,750 CZK" }, { description: "Basmati Rice 5kg", qty: 10, unitPrice: "320 CZK", total: "3,200 CZK" }, { description: "Ghee 1L", qty: 8, unitPrice: "290 CZK", total: "2,320 CZK" }] },
-  { id: "INV-2024-086", business: "Namaste Restaurant", ico: "45678901", address: "Karlova 8, Prague 1", amount: "8,900 CZK", date: "Jun 10, 2024", due: "Jun 24, 2024", status: "paid", orderId: "ORD-4829", subtotal: "7,355 CZK", vat: "1,545 CZK", items: [{ description: "Paneer 1kg", qty: 8, unitPrice: "320 CZK", total: "2,560 CZK" }, { description: "Lentils Variety Pack", qty: 6, unitPrice: "280 CZK", total: "1,680 CZK" }] },
-  { id: "INV-2024-085", business: "Spice Garden", ico: "56789012", address: "Dlouha 33, Prague 1", amount: "22,300 CZK", date: "Jun 8, 2024", due: "Jun 22, 2024", status: "paid", orderId: "ORD-4825", subtotal: "18,430 CZK", vat: "3,870 CZK", items: [{ description: "Mixed Spices Set", qty: 20, unitPrice: "450 CZK", total: "9,000 CZK" }, { description: "Lentils Variety Pack", qty: 15, unitPrice: "280 CZK", total: "4,200 CZK" }, { description: "Basmati Rice 5kg", qty: 8, unitPrice: "320 CZK", total: "2,560 CZK" }] },
+  { id: "INV-2024-089", business: "Tandoori Nights", ico: "34567890", address: "Namesti Miru 12, Prague 2", amount: "12,100 EUR", date: "Jun 15, 2024", due: "Jun 29, 2024", status: "issued", orderId: "ORD-4830", subtotal: "10,000 EUR", vat: "2,100 EUR", items: [{ description: "Tandoori Paste 500g", qty: 8, unitPrice: "145 EUR", total: "1,160 EUR" }, { description: "Naan Bread Mix 2kg", qty: 7, unitPrice: "180 EUR", total: "1,260 EUR" }, { description: "Basmati Rice 5kg", qty: 12, unitPrice: "320 EUR", total: "3,840 EUR" }, { description: "Garam Masala 500g", qty: 10, unitPrice: "180 EUR", total: "1,800 EUR" }] },
+  { id: "INV-2024-088", business: "Curry House Prague", ico: "23456789", address: "Vinohradska 89, Prague 2", amount: "5,230 EUR", date: "Jun 14, 2024", due: "Jun 28, 2024", status: "issued", orderId: "ORD-4831", subtotal: "4,322 EUR", vat: "908 EUR", items: [{ description: "Chickpeas 2kg", qty: 5, unitPrice: "95 EUR", total: "475 EUR" }, { description: "Turmeric Powder 1kg", qty: 3, unitPrice: "210 EUR", total: "630 EUR" }, { description: "Coconut Milk 400ml", qty: 20, unitPrice: "65 EUR", total: "1,300 EUR" }] },
+  { id: "INV-2024-087", business: "Bombay Express", ico: "12345678", address: "Vodickova 32, Prague 1", amount: "18,500 EUR", date: "Jun 12, 2024", due: "Jun 26, 2024", status: "paid", orderId: "ORD-4828", subtotal: "15,289 EUR", vat: "3,211 EUR", items: [{ description: "Mixed Spices Set", qty: 15, unitPrice: "450 EUR", total: "6,750 EUR" }, { description: "Basmati Rice 5kg", qty: 10, unitPrice: "320 EUR", total: "3,200 EUR" }, { description: "Ghee 1L", qty: 8, unitPrice: "290 EUR", total: "2,320 EUR" }] },
+  { id: "INV-2024-086", business: "Namaste Restaurant", ico: "45678901", address: "Karlova 8, Prague 1", amount: "8,900 EUR", date: "Jun 10, 2024", due: "Jun 24, 2024", status: "paid", orderId: "ORD-4829", subtotal: "7,355 EUR", vat: "1,545 EUR", items: [{ description: "Paneer 1kg", qty: 8, unitPrice: "320 EUR", total: "2,560 EUR" }, { description: "Lentils Variety Pack", qty: 6, unitPrice: "280 EUR", total: "1,680 EUR" }] },
+  { id: "INV-2024-085", business: "Spice Garden", ico: "56789012", address: "Dlouha 33, Prague 1", amount: "22,300 EUR", date: "Jun 8, 2024", due: "Jun 22, 2024", status: "paid", orderId: "ORD-4825", subtotal: "18,430 EUR", vat: "3,870 EUR", items: [{ description: "Mixed Spices Set", qty: 20, unitPrice: "450 EUR", total: "9,000 EUR" }, { description: "Lentils Variety Pack", qty: 15, unitPrice: "280 EUR", total: "4,200 EUR" }, { description: "Basmati Rice 5kg", qty: 8, unitPrice: "320 EUR", total: "2,560 EUR" }] },
 ];
 
 // Dashboard Page
@@ -489,12 +489,12 @@ type Order = {
 };
 
 const allOrders: Order[] = [
-  { id: "ORD-4832", business: "Bombay Express", items: 12, total: "8,450 CZK", status: "new", date: "Jun 15", delivery: "Jun 17", contact: "Raj Patel", phone: "+420 777 123 456", address: "Vodickova 32, Prague 1", products: [{ name: "Basmati Rice 5kg", qty: 4, price: "320 CZK" }, { name: "Garam Masala 500g", qty: 6, price: "180 CZK" }, { name: "Ghee 1L", qty: 2, price: "290 CZK" }] },
-  { id: "ORD-4831", business: "Curry House Prague", items: 8, total: "5,230 CZK", status: "confirmed", date: "Jun 15", delivery: "Jun 17", contact: "Amit Singh", phone: "+420 777 234 567", address: "Vinohradska 89, Prague 2", products: [{ name: "Chickpeas 2kg", qty: 5, price: "95 CZK" }, { name: "Turmeric Powder 1kg", qty: 3, price: "210 CZK" }] },
-  { id: "ORD-4830", business: "Tandoori Nights", items: 15, total: "12,100 CZK", status: "confirmed", date: "Jun 15", delivery: "Jun 16", contact: "Priya Sharma", phone: "+420 777 345 678", address: "Namesti Miru 12, Prague 2", products: [{ name: "Tandoori Paste 500g", qty: 8, price: "145 CZK" }, { name: "Naan Bread Mix 2kg", qty: 7, price: "180 CZK" }] },
-  { id: "ORD-4829", business: "Namaste Restaurant", items: 6, total: "3,890 CZK", status: "completed", date: "Jun 14", delivery: "Jun 15", contact: "Vikram Kumar", phone: "+420 777 456 789", address: "Karlova 8, Prague 1", products: [{ name: "Paneer 1kg", qty: 4, price: "320 CZK" }, { name: "Coriander Fresh 200g", qty: 2, price: "45 CZK" }] },
-  { id: "ORD-4828", business: "Spice Garden", items: 22, total: "18,500 CZK", status: "completed", date: "Jun 14", delivery: "Jun 15", contact: "Maya Devi", phone: "+420 777 567 890", address: "Dlouha 33, Prague 1", products: [{ name: "Mixed Spices Set", qty: 10, price: "450 CZK" }, { name: "Lentils Variety Pack", qty: 12, price: "280 CZK" }] },
-  { id: "ORD-4827", business: "Bombay Express", items: 9, total: "6,200 CZK", status: "completed", date: "Jun 13", delivery: "Jun 14", contact: "Raj Patel", phone: "+420 777 123 456", address: "Vodickova 32, Prague 1", products: [{ name: "Basmati Rice 5kg", qty: 3, price: "320 CZK" }, { name: "Coconut Milk 400ml", qty: 6, price: "65 CZK" }] },
+  { id: "ORD-4832", business: "Bombay Express", items: 12, total: "8,450 EUR", status: "new", date: "Jun 15", delivery: "Jun 17", contact: "Raj Patel", phone: "+420 777 123 456", address: "Vodickova 32, Prague 1", products: [{ name: "Basmati Rice 5kg", qty: 4, price: "320 EUR" }, { name: "Garam Masala 500g", qty: 6, price: "180 EUR" }, { name: "Ghee 1L", qty: 2, price: "290 EUR" }] },
+  { id: "ORD-4831", business: "Curry House Prague", items: 8, total: "5,230 EUR", status: "confirmed", date: "Jun 15", delivery: "Jun 17", contact: "Amit Singh", phone: "+420 777 234 567", address: "Vinohradska 89, Prague 2", products: [{ name: "Chickpeas 2kg", qty: 5, price: "95 EUR" }, { name: "Turmeric Powder 1kg", qty: 3, price: "210 EUR" }] },
+  { id: "ORD-4830", business: "Tandoori Nights", items: 15, total: "12,100 EUR", status: "confirmed", date: "Jun 15", delivery: "Jun 16", contact: "Priya Sharma", phone: "+420 777 345 678", address: "Namesti Miru 12, Prague 2", products: [{ name: "Tandoori Paste 500g", qty: 8, price: "145 EUR" }, { name: "Naan Bread Mix 2kg", qty: 7, price: "180 EUR" }] },
+  { id: "ORD-4829", business: "Namaste Restaurant", items: 6, total: "3,890 EUR", status: "completed", date: "Jun 14", delivery: "Jun 15", contact: "Vikram Kumar", phone: "+420 777 456 789", address: "Karlova 8, Prague 1", products: [{ name: "Paneer 1kg", qty: 4, price: "320 EUR" }, { name: "Coriander Fresh 200g", qty: 2, price: "45 EUR" }] },
+  { id: "ORD-4828", business: "Spice Garden", items: 22, total: "18,500 EUR", status: "completed", date: "Jun 14", delivery: "Jun 15", contact: "Maya Devi", phone: "+420 777 567 890", address: "Dlouha 33, Prague 1", products: [{ name: "Mixed Spices Set", qty: 10, price: "450 EUR" }, { name: "Lentils Variety Pack", qty: 12, price: "280 EUR" }] },
+  { id: "ORD-4827", business: "Bombay Express", items: 9, total: "6,200 EUR", status: "completed", date: "Jun 13", delivery: "Jun 14", contact: "Raj Patel", phone: "+420 777 123 456", address: "Vodickova 32, Prague 1", products: [{ name: "Basmati Rice 5kg", qty: 3, price: "320 EUR" }, { name: "Coconut Milk 400ml", qty: 6, price: "65 EUR" }] },
 ];
 
 function OrdersPage() {
@@ -873,7 +873,7 @@ function InvoicingPage() {
             <CardTitle className="text-sm font-medium text-muted-foreground">Unpaid</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">17,330 CZK</div>
+            <div className="text-2xl font-bold">17,330 EUR</div>
             <p className="text-sm text-muted-foreground mt-1">2 invoices</p>
           </CardContent>
         </Card>
@@ -883,7 +883,7 @@ function InvoicingPage() {
             <CardTitle className="text-sm font-medium text-muted-foreground">Paid This Month</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">49,700 CZK</div>
+            <div className="text-2xl font-bold">49,700 EUR</div>
             <p className="text-sm text-muted-foreground mt-1">3 invoices</p>
           </CardContent>
         </Card>
@@ -893,7 +893,7 @@ function InvoicingPage() {
             <CardTitle className="text-sm font-medium text-muted-foreground">Overdue</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-emerald-600">0 CZK</div>
+            <div className="text-2xl font-bold text-emerald-600">0 EUR</div>
             <p className="text-sm text-muted-foreground mt-1">0 invoices</p>
           </CardContent>
         </Card>
@@ -1096,7 +1096,7 @@ function InvoicingPage() {
                 <Input id="dueDate" type="date" defaultValue="2024-06-29" />
               </div>
               <div className="col-span-2 space-y-2">
-                <Label htmlFor="amount">Amount (CZK)</Label>
+                <Label htmlFor="amount">Amount (EUR)</Label>
                 <Input id="amount" placeholder="0.00" />
               </div>
             </div>
@@ -1129,7 +1129,7 @@ function AnalyticsPage() {
         <Card>
           <CardHeader>
             <CardTitle>Revenue</CardTitle>
-            <CardDescription>Monthly revenue in CZK</CardDescription>
+            <CardDescription>Monthly revenue in euros</CardDescription>
           </CardHeader>
           <CardContent>
             <ChartContainer config={chartConfig} className="h-[300px] w-full">
@@ -1276,14 +1276,14 @@ function SettingsPage() {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="currency">Currency</Label>
-              <Select defaultValue="czk">
+              <Select defaultValue="eur">
                 <SelectTrigger>
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="czk">CZK (Czech Koruna)</SelectItem>
                   <SelectItem value="eur">EUR (Euro)</SelectItem>
                   <SelectItem value="usd">USD (US Dollar)</SelectItem>
+                  <SelectItem value="gbp">GBP (British Pound)</SelectItem>
                 </SelectContent>
               </Select>
             </div>
