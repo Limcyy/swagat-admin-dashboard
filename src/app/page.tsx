@@ -1443,53 +1443,53 @@ export default function SwagatAdmin() {
                   <span className="absolute top-1 right-1 h-2.5 w-2.5 rounded-full bg-red-500 border-2 border-background" />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-80">
+              <DropdownMenuContent align="end" className="w-80 overflow-hidden">
                 <DropdownMenuLabel className="flex items-center justify-between">
                   <span>Notifications</span>
                   <Badge variant="secondary" className="text-xs">3 new</Badge>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <div className="max-h-80 overflow-y-auto">
-                  <DropdownMenuItem className="flex flex-col items-start gap-1 p-3 cursor-pointer">
-                    <div className="flex items-center gap-2 w-full">
+                <div className="max-h-80 overflow-y-auto overflow-x-hidden">
+                  <DropdownMenuItem className="flex flex-col items-start gap-1 p-3 cursor-pointer w-full">
+                    <div className="flex items-center gap-2 w-full min-w-0">
                       <span className="h-2 w-2 rounded-full bg-amber-500 shrink-0" />
-                      <span className="font-medium text-sm">New order received</span>
-                      <span className="text-xs text-muted-foreground ml-auto">2m ago</span>
+                      <span className="font-medium text-sm truncate">New order received</span>
+                      <span className="text-xs text-muted-foreground ml-auto shrink-0">2m ago</span>
                     </div>
-                    <p className="text-xs text-muted-foreground pl-4">Bombay Express placed order #ORD-4832 for 8,450 CZK</p>
+                    <p className="text-xs text-muted-foreground pl-4 truncate w-full">Bombay Express placed order #ORD-4832</p>
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="flex flex-col items-start gap-1 p-3 cursor-pointer">
-                    <div className="flex items-center gap-2 w-full">
+                  <DropdownMenuItem className="flex flex-col items-start gap-1 p-3 cursor-pointer w-full">
+                    <div className="flex items-center gap-2 w-full min-w-0">
                       <span className="h-2 w-2 rounded-full bg-emerald-500 shrink-0" />
-                      <span className="font-medium text-sm">Payment received</span>
-                      <span className="text-xs text-muted-foreground ml-auto">1h ago</span>
+                      <span className="font-medium text-sm truncate">Payment received</span>
+                      <span className="text-xs text-muted-foreground ml-auto shrink-0">1h ago</span>
                     </div>
-                    <p className="text-xs text-muted-foreground pl-4">Invoice INV-2024-087 paid by Bombay Express</p>
+                    <p className="text-xs text-muted-foreground pl-4 truncate w-full">Invoice INV-2024-087 paid by Bombay Express</p>
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="flex flex-col items-start gap-1 p-3 cursor-pointer">
-                    <div className="flex items-center gap-2 w-full">
+                  <DropdownMenuItem className="flex flex-col items-start gap-1 p-3 cursor-pointer w-full">
+                    <div className="flex items-center gap-2 w-full min-w-0">
                       <span className="h-2 w-2 rounded-full bg-sky-500 shrink-0" />
-                      <span className="font-medium text-sm">New business registered</span>
-                      <span className="text-xs text-muted-foreground ml-auto">3h ago</span>
+                      <span className="font-medium text-sm truncate">New business registered</span>
+                      <span className="text-xs text-muted-foreground ml-auto shrink-0">3h ago</span>
                     </div>
-                    <p className="text-xs text-muted-foreground pl-4">Masala Kitchen s.r.o. has been added to your clients</p>
+                    <p className="text-xs text-muted-foreground pl-4 truncate w-full">Masala Kitchen s.r.o. added to clients</p>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem className="flex flex-col items-start gap-1 p-3 cursor-pointer opacity-60">
-                    <div className="flex items-center gap-2 w-full">
+                  <DropdownMenuItem className="flex flex-col items-start gap-1 p-3 cursor-pointer opacity-60 w-full">
+                    <div className="flex items-center gap-2 w-full min-w-0">
                       <span className="h-2 w-2 rounded-full bg-muted shrink-0" />
-                      <span className="font-medium text-sm">Order delivered</span>
-                      <span className="text-xs text-muted-foreground ml-auto">Yesterday</span>
+                      <span className="font-medium text-sm truncate">Order delivered</span>
+                      <span className="text-xs text-muted-foreground ml-auto shrink-0">Yesterday</span>
                     </div>
-                    <p className="text-xs text-muted-foreground pl-4">Order #ORD-4828 delivered to Spice Garden</p>
+                    <p className="text-xs text-muted-foreground pl-4 truncate w-full">Order #ORD-4828 delivered to Spice Garden</p>
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="flex flex-col items-start gap-1 p-3 cursor-pointer opacity-60">
-                    <div className="flex items-center gap-2 w-full">
+                  <DropdownMenuItem className="flex flex-col items-start gap-1 p-3 cursor-pointer opacity-60 w-full">
+                    <div className="flex items-center gap-2 w-full min-w-0">
                       <span className="h-2 w-2 rounded-full bg-muted shrink-0" />
-                      <span className="font-medium text-sm">Weekly report ready</span>
-                      <span className="text-xs text-muted-foreground ml-auto">2 days ago</span>
+                      <span className="font-medium text-sm truncate">Weekly report ready</span>
+                      <span className="text-xs text-muted-foreground ml-auto shrink-0">2 days ago</span>
                     </div>
-                    <p className="text-xs text-muted-foreground pl-4">Your weekly sales report is ready to view</p>
+                    <p className="text-xs text-muted-foreground pl-4 truncate w-full">Your weekly sales report is ready to view</p>
                   </DropdownMenuItem>
                 </div>
                 <DropdownMenuSeparator />
