@@ -114,12 +114,13 @@ const activityFeed = [
   { action: "Invoice issued", detail: "Tandoori Nights - INV-2024-089", time: "5 hours ago" },
 ];
 
-type Page = "dashboard" | "orders" | "businesses" | "invoicing" | "analytics" | "settings";
+type Page = "dashboard" | "orders" | "businesses" | "items" | "invoicing" | "analytics" | "settings";
 
 const navItems: { title: string; icon: string; page: Page }[] = [
   { title: "Dashboard", icon: "home", page: "dashboard" },
   { title: "Orders", icon: "orders", page: "orders" },
   { title: "Businesses", icon: "users", page: "businesses" },
+  { title: "Items", icon: "package", page: "items" },
   { title: "Invoicing", icon: "invoice", page: "invoicing" },
   { title: "Analytics", icon: "chart", page: "analytics" },
 ];
@@ -161,6 +162,14 @@ function IconChart() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
       <line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" />
+    </svg>
+  );
+}
+
+function IconPackage() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+      <path d="M16.5 9.4 7.55 4.24" /><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /><polyline points="3.29 7 12 12 20.71 7" /><line x1="12" y1="22" x2="12" y2="12" />
     </svg>
   );
 }
@@ -217,6 +226,7 @@ const navIconMap: Record<string, () => React.ReactNode> = {
   home: IconHome,
   orders: IconOrders,
   users: IconUsers,
+  package: IconPackage,
   invoice: IconInvoice,
   chart: IconChart,
 };
@@ -839,6 +849,205 @@ function BusinessesPage() {
               </Button>
               <Button className="flex-1" onClick={() => setShowAddDialog(false)}>
                 Add Business
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
+}
+
+// Item data
+type Item = {
+  id: number;
+  name: string;
+  category: string;
+  price: string;
+  stock: number;
+  unit: string;
+  image?: string;
+};
+
+const allItems: Item[] = [
+  { id: 1, name: "Basmati Rice 5kg", category: "Rice & Grains", price: "12.80 EUR", stock: 145, unit: "bag" },
+  { id: 2, name: "Garam Masala 500g", category: "Spices", price: "7.20 EUR", stock: 89, unit: "pack" },
+  { id: 3, name: "Ghee 1L", category: "Dairy", price: "11.60 EUR", stock: 62, unit: "jar" },
+  { id: 4, name: "Chickpeas 2kg", category: "Legumes", price: "3.80 EUR", stock: 203, unit: "bag" },
+  { id: 5, name: "Turmeric Powder 1kg", category: "Spices", price: "8.40 EUR", stock: 78, unit: "pack" },
+  { id: 6, name: "Coconut Milk 400ml", category: "Canned Goods", price: "2.60 EUR", stock: 312, unit: "can" },
+  { id: 7, name: "Paneer 1kg", category: "Dairy", price: "12.80 EUR", stock: 45, unit: "block" },
+  { id: 8, name: "Naan Bread Mix 2kg", category: "Flour & Baking", price: "7.20 EUR", stock: 98, unit: "bag" },
+];
+
+const itemCategories = ["Rice & Grains", "Spices", "Dairy", "Legumes", "Canned Goods", "Flour & Baking"];
+
+// Items Page
+function ItemsPage() {
+  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
+  const [showAddDialog, setShowAddDialog] = useState(false);
+
+  return (
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-2xl font-bold tracking-tight">Items</h2>
+          <p className="text-sm text-muted-foreground">Manage your product inventory</p>
+        </div>
+        <Button size="sm" onClick={() => setShowAddDialog(true)}>
+          <IconPlus />
+          <span className="ml-2">Add Item</span>
+        </Button>
+      </div>
+
+      <div className="flex items-center gap-3">
+        <div className="relative flex-1 max-w-sm">
+          <IconSearch />
+          <Input placeholder="Search items..." className="pl-10 h-9 text-sm" />
+        </div>
+        {itemCategories.slice(0, 4).map((cat) => (
+          <Button key={cat} variant="outline" size="sm">{cat}</Button>
+        ))}
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {allItems.map((item) => {
+          const stockStatus = item.stock > 100 ? "emerald" : item.stock > 50 ? "amber" : "red";
+          return (
+            <Card
+              key={item.id}
+              className="cursor-pointer hover:shadow-md transition-shadow"
+              onClick={() => setSelectedItem(item)}
+            >
+              <CardContent className="p-4">
+                <div className="flex items-start justify-between mb-3">
+                  <div className={`h-12 w-12 rounded-lg bg-${stockStatus}-100 flex items-center justify-center`}>
+                    <IconPackage />
+                  </div>
+                  <Badge variant="secondary" className="text-xs">{item.category}</Badge>
+                </div>
+                <h3 className="font-semibold text-sm mb-1">{item.name}</h3>
+                <p className="text-lg font-bold text-primary mb-2">{item.price}</p>
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-muted-foreground">Stock</span>
+                  <span className={`font-medium text-${stockStatus}-600`}>{item.stock} {item.unit}s</span>
+                </div>
+              </CardContent>
+            </Card>
+          );
+        })}
+      </div>
+
+      {/* Item Detail Dialog */}
+      <Dialog open={!!selectedItem} onOpenChange={() => setSelectedItem(null)}>
+        <DialogContent className="max-w-md">
+          {selectedItem && (
+            <>
+              <DialogHeader>
+                <DialogTitle>{selectedItem.name}</DialogTitle>
+                <DialogDescription>{selectedItem.category}</DialogDescription>
+              </DialogHeader>
+
+              <div className="space-y-4 pt-2">
+                <div className="flex items-center justify-center py-6 bg-muted/50 rounded-lg">
+                  <div className="h-20 w-20 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-10 w-10">
+                      <path d="M16.5 9.4 7.55 4.24" /><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /><polyline points="3.29 7 12 12 20.71 7" /><line x1="12" y1="22" x2="12" y2="12" />
+                    </svg>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="space-y-1">
+                    <p className="text-muted-foreground">Price</p>
+                    <p className="text-xl font-bold">{selectedItem.price}</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-muted-foreground">In Stock</p>
+                    <p className="text-xl font-bold">{selectedItem.stock} <span className="text-sm font-normal text-muted-foreground">{selectedItem.unit}s</span></p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-muted-foreground">Category</p>
+                    <p className="font-medium">{selectedItem.category}</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-muted-foreground">Item ID</p>
+                    <p className="font-medium">ITM-{String(selectedItem.id).padStart(4, '0')}</p>
+                  </div>
+                </div>
+
+                <Separator />
+
+                <div className="flex gap-2">
+                  <Button variant="outline" size="sm" className="flex-1">Edit Item</Button>
+                  <Button variant="outline" size="sm" className="flex-1">Adjust Stock</Button>
+                  <Button size="sm" className="flex-1">Reorder</Button>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      {/* Add Item Dialog */}
+      <Dialog open={showAddDialog} onOpenChange={setShowAddDialog}>
+        <DialogContent className="max-w-lg">
+          <DialogHeader>
+            <DialogTitle>Add New Item</DialogTitle>
+            <DialogDescription>Add a new product to your inventory</DialogDescription>
+          </DialogHeader>
+
+          <div className="space-y-4 pt-2">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="col-span-2 space-y-2">
+                <Label htmlFor="itemName">Item Name</Label>
+                <Input id="itemName" placeholder="e.g. Basmati Rice 5kg" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="category">Category</Label>
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select category" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {itemCategories.map((cat) => (
+                      <SelectItem key={cat} value={cat}>{cat}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="unit">Unit Type</Label>
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select unit" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="bag">Bag</SelectItem>
+                    <SelectItem value="pack">Pack</SelectItem>
+                    <SelectItem value="jar">Jar</SelectItem>
+                    <SelectItem value="can">Can</SelectItem>
+                    <SelectItem value="block">Block</SelectItem>
+                    <SelectItem value="bottle">Bottle</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="price">Price (EUR)</Label>
+                <Input id="price" placeholder="0.00" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="stock">Initial Stock</Label>
+                <Input id="stock" type="number" placeholder="0" />
+              </div>
+            </div>
+
+            <div className="flex gap-2 pt-4">
+              <Button variant="outline" className="flex-1" onClick={() => setShowAddDialog(false)}>
+                Cancel
+              </Button>
+              <Button className="flex-1" onClick={() => setShowAddDialog(false)}>
+                Add Item
               </Button>
             </div>
           </div>
@@ -1505,6 +1714,7 @@ export default function SwagatAdmin() {
           {activePage === "dashboard" && <DashboardPage onNavigate={setActivePage} />}
           {activePage === "orders" && <OrdersPage />}
           {activePage === "businesses" && <BusinessesPage />}
+          {activePage === "items" && <ItemsPage />}
           {activePage === "invoicing" && <InvoicingPage />}
           {activePage === "analytics" && <AnalyticsPage />}
           {activePage === "settings" && <SettingsPage />}
