@@ -305,7 +305,7 @@ function DashboardPage({ onNavigate }: { onNavigate: (page: Page) => void }) {
           <div className="absolute top-0 right-0 h-24 w-24 -translate-y-8 translate-x-8 rounded-full bg-chart-1 opacity-10" />
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">New Orders</CardTitle>
-            <div className="rounded-lg bg-chart-1/10 p-2.5 text-chart-1">
+            <div className="text-chart-1">
               <IconNewOrder />
             </div>
           </CardHeader>
@@ -321,7 +321,7 @@ function DashboardPage({ onNavigate }: { onNavigate: (page: Page) => void }) {
           <div className="absolute top-0 right-0 h-24 w-24 -translate-y-8 translate-x-8 rounded-full bg-chart-2 opacity-10" />
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">Open Orders</CardTitle>
-            <div className="rounded-lg bg-chart-2/10 p-2.5 text-chart-2">
+            <div className="text-chart-2">
               <IconOpenOrder />
             </div>
           </CardHeader>
@@ -337,7 +337,7 @@ function DashboardPage({ onNavigate }: { onNavigate: (page: Page) => void }) {
           <div className="absolute top-0 right-0 h-24 w-24 -translate-y-8 translate-x-8 rounded-full bg-chart-1 opacity-10" />
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">Active Businesses</CardTitle>
-            <div className="rounded-lg bg-chart-1/10 p-2.5 text-chart-1">
+            <div className="text-chart-1">
               <IconBusiness />
             </div>
           </CardHeader>
@@ -353,7 +353,7 @@ function DashboardPage({ onNavigate }: { onNavigate: (page: Page) => void }) {
           <div className="absolute top-0 right-0 h-24 w-24 -translate-y-8 translate-x-8 rounded-full bg-chart-2 opacity-10" />
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">Monthly Revenue</CardTitle>
-            <div className="rounded-lg bg-chart-2/10 p-2.5 text-chart-2">
+            <div className="text-chart-2">
               <IconRevenue />
             </div>
           </CardHeader>
