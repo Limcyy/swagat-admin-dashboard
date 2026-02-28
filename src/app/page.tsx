@@ -919,11 +919,11 @@ function ItemsPage() {
               className="cursor-pointer hover:shadow-md transition-shadow overflow-hidden"
               onClick={() => setSelectedItem(item)}
             >
-              <div className="aspect-square bg-muted/30 flex items-center justify-center p-4">
+              <div className="bg-muted/30 flex items-center justify-center p-4 h-36">
                 <img
                   src="/item-placeholder.png"
                   alt={item.name}
-                  className="w-full h-full object-contain"
+                  className="h-full object-contain"
                 />
               </div>
               <CardContent className="p-4 pt-3">
@@ -1002,6 +1002,23 @@ function ItemsPage() {
           </DialogHeader>
 
           <div className="space-y-4 pt-2">
+            <div className="space-y-2">
+              <Label>Product Image</Label>
+              <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-6 text-center hover:border-muted-foreground/50 transition-colors cursor-pointer">
+                <div className="flex flex-col items-center gap-2">
+                  <div className="h-10 w-10 rounded-full bg-muted flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-muted-foreground">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line x1="12" y1="3" x2="12" y2="15" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">Upload Image</p>
+                    <p className="text-xs text-muted-foreground">PNG, JPG up to 5MB</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="grid grid-cols-2 gap-4">
               <div className="col-span-2 space-y-2">
                 <Label htmlFor="itemName">Item Name</Label>
@@ -1046,7 +1063,7 @@ function ItemsPage() {
               </div>
             </div>
 
-            <div className="flex gap-2 pt-4">
+            <div className="flex gap-2 pt-2">
               <Button variant="outline" className="flex-1" onClick={() => setShowAddDialog(false)}>
                 Cancel
               </Button>
